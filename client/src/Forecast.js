@@ -1,6 +1,6 @@
 import React from 'react';
 
-class IceMelting extends React.Component {
+class Forecast extends React.Component {
   render() {
     return (
       <div>
@@ -10,4 +10,4 @@ class IceMelting extends React.Component {
   }
 }
 
-export default IceMelting;
+export default Forecast;

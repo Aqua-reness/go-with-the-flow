@@ -1,6 +1,6 @@
 import React from 'react';
 
-class SeaLevel extends React.Component {
+class Current extends React.Component {
   render() {
     return (
       <div>
@@ -10,4 +10,4 @@ class SeaLevel extends React.Component {
   }
 }
 
-export default SeaLevel;
+export default Current;
