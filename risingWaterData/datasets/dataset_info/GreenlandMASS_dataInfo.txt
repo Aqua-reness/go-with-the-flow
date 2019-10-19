@@ -1,0 +1,30 @@
+HDR Greenland Mass
+HDR
+HDR Data from the GRACE JPL RL05M.1 Mascon Solution: Version 2
+HDR
+HDR This file contains values that are anomalies relative to April 2002 computed at the Jet Propulsion Laboratory under the
+HDR auspices of the NASA MEaSUREs program. The Greenland mass anomalies are generated using GRACE data from the JPL RL05M.1
+HDR Mascon Solution: Version 2 (https://podaac.jpl.nasa.gov/dataset/TELLUS_GRACE_MASCON_CRI_GRID_RL05_V2).
+HDR
+HDR Greenland Mass Trend (04/2002 - 06/2017): -285.85 +/-21.01 Gt/yr 
+HDR
+HDR If you use these data please cite:
+HDR Wiese, D. N., D.-N. Yuan, C. Boening, F. W. Landerer, and M. M. Watkins (2016) JPL GRACE Mascon Ocean, Ice, and Hydrology Equivalent
+HDR Water Height RL05M.1 CRI Filtered Version 2., Ver. 2., PO.DAAC, CA, USA. Dataset accessed [YYYY-MM-DD] at http://dx.doi.org/10.5067/TEMSC-2LCR5.
+HDR
+HDR For information on how the data were generated please refer to:
+HDR Watkins, M. M., D. N. Wiese, D. -N. Yuan, C. Boening, and F. W. Landerer (2015), Improved methods for observing Earth's time variable
+HDR mass distribution with GRACE using spherical cap mascons, J. Geophys. Res. Solid Earth, 120, 2648_2671, doi: 10.1002/2014JB011547.
+HDR
+HDR column description
+HDR 1 TIME (year.decimal)
+HDR 2 Greenland mass (Gigatonnes)
+HDR 3 Greenland mass 1-sigma uncertainty (Gigatonnes)
+HDR
+HDR NOTES (1): Correction for Glacial Isostatic Adjustment (GIA) is from A. et al. (2013), doi:10.1093/gji/ggs030
+HDR NOTES (2): Trend value is derived by performing a weighted least squares fit of an annual, semiannual, bias, and trend to the timeseries
+HDR NOTES (3): Monthly uncertainties are computed using measurement errors provided in the JPL RL05M.1 Solution and considering
+HDR            leakage errors in accordance with Wiese et al. (2016), doi:10.1002/2016WR019344 and Schlegel et al. (2016), doi:10.5194/tc-10-1965-2016
+HDR NOTES (4): The trend uncertainty provides a 1-sigma confidence interval. The calculation considers only the propagation of the monthly uncertainties
+HDR            into the trend, assumes uncorrelated observations, and includes GIA uncertainty according to Velicogna et al. (2013), doi:10.1002/grl.50527
+HDR

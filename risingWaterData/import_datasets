@@ -1,0 +1,41 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Oct 19 13:29:24 2019
+
+@author: lynn
+"""
+
+import requests
+import urllib
+import html2text
+import urllib.request
+import pandas as pd
+import os
+
+
+cwd = os.getcwd()
+dataset_dir = 'datasets/'
+
+def getdata():
+
+    gmsl_colNames = ['a', 'fc', 'year_decimal', 'numobs', 'numWobs', 'GMSL', 'GMSL_stdev', 'g60', 'GMSL_GIA', 'GMSL_GIA_stdev', 'g_gia_60','g_gia_60_nosem']
+    co2_colNames = ['year', 'month', 'decimal_date', 'average', 'season_core', 'trend', 'days']
+    iceLoss_colNames = ['year_decimal','antartic_mass','antartic_mass_uncertainty']
+    
+    gmsl = pd.read_csv(dataset_dir+"GMSL.txt", usecols=['year_decimal', 'GMSL', 'GMSL_stdev','GMSL_GIA','GMSL_GIA_stdev'],index_col = "year_decimal", names = gmsl_colNames, delim_whitespace = True)
+    artic_seaIce = pd.read_csv(dataset_dir+"ArticSeaIce.txt", header=0, delim_whitespace=True, index_col="year",usecols=['year','extent','area'])
+    antartica_seaIce = pd.read_csv(dataset_dir+"AntarticaMass.txt",names=iceLoss_colNames,index_col="year_decimal",delim_whitespace=True)
+    greenland_seaIce = pd.read_csv(dataset_dir+"GreenlandMASS.txt",names=iceLoss_colNames,index_col="year_decimal",delim_whitespace=True)
+    co2 = pd.read_csv(dataset_dir+"CO2.txt",names=co2_colNames,index_col="year",delim_whitespace=True,usecols=['year','month','decimal_date','average','trend'])
+    tempAnomalies = pd.read_csv(dataset_dir+"GlobalTempAnomaly.txt",header=0,delim_whitespace=True,index_col='Year')
+    population = pd.read_excel(dataset_dir+'PopulationData.xls',skiprows=1,header=2,index_col='Country Name')
+    
+    #get the total population from the country's populations
+    total_pop = population.transpose()
+    total_pop_indexes = total_pop.index;
+    total_pop.drop(total_pop.index[:3], inplace=True)
+    total_pop_sum = total_pop.sum(axis=1,skipna=True).rename('totalpopulation')
+
+    return;
+
