@@ -1,14 +1,16 @@
 # go-with-the-flow
 Python App to Visualize the Impact of Rising Sea Levels
 
-# Install Python and Pip
-Python3 - https://www.python.org/downloads/
-
-Pip3 - https://pip.pypa.io/en/stable/installing/
+# Install Anaconda
+Follow instructions here: https://www.anaconda.com/distribution/
 
 # Install Python Libraries
-Kivy - python3 -m pip install kivy
+Kivy - pip install kivy
 
-ffpyplayer - python3 -m pip install ffpyplayer
+ffpyplayer - pip install ffpyplayer
 
-plotly - python3 -m pip install plotly==4.1.0
+plotly - pip install plotly==4.1.0
+
+KivyMD - follow instructions on page: https://gitlab.com/kivymd/KivyMD
+
+pyinstaller - pip install pyinstaller
