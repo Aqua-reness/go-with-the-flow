@@ -1,9 +1,9 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
 
-import globalMeanSeaLevel from '../../../data/gmsl.json'
+import temperatureData from '../../../data/tempAnomalies.json'
 
-class SeaLevel extends React.Component {
+class TemperatureAnomalies extends React.Component {
 
     constructor(props) {
         super(props)
@@ -13,16 +13,15 @@ class SeaLevel extends React.Component {
 
     componentDidMount() {
         // load up JSON files to be displayed in charts
-
+        
     }
 
     render() {
         const {
 
         } = this.state
-
-        const xValues = Object.keys(globalMeanSeaLevel.GMSL_GIA)
-        const yValues = Object.values(globalMeanSeaLevel.GMSL_GIA)
+        const xValues = Object.keys(temperatureData.Lowess)
+        const yValues = Object.values(temperatureData.Lowess)
 
         return (
         <div className="mass-trend-content">
@@ -36,11 +35,11 @@ class SeaLevel extends React.Component {
                     marker: {color: 'red'},
                 }
                 ]}
-                layout={ {width: 700, height: 550, title: 'Global Mean Sea Level'} }
+                layout={ {width: 700, height: 550, title: 'Temperature Anomalies'} }
             />
         </div>
         );
     }
     }
 
-    export default SeaLevel;
+    export default TemperatureAnomalies;

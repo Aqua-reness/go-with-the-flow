@@ -1,9 +1,9 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
 
-import globalMeanSeaLevel from '../../../data/gmsl.json'
+import populationData from '../../../data/total_pop_sum.json'
 
-class SeaLevel extends React.Component {
+class Population extends React.Component {
 
     constructor(props) {
         super(props)
@@ -20,9 +20,8 @@ class SeaLevel extends React.Component {
         const {
 
         } = this.state
-
-        const xValues = Object.keys(globalMeanSeaLevel.GMSL_GIA)
-        const yValues = Object.values(globalMeanSeaLevel.GMSL_GIA)
+        const xValues = Object.keys(populationData)
+        const yValues = Object.values(populationData)
 
         return (
         <div className="mass-trend-content">
@@ -36,11 +35,11 @@ class SeaLevel extends React.Component {
                     marker: {color: 'red'},
                 }
                 ]}
-                layout={ {width: 700, height: 550, title: 'Global Mean Sea Level'} }
+                layout={ {width: 700, height: 550, title: 'Population'} }
             />
         </div>
         );
     }
     }
 
-    export default SeaLevel;
+    export default Population;

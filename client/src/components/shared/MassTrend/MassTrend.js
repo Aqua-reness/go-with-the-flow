@@ -1,7 +1,11 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
 
-class MassTrendChart extends React.Component {
+import antarticaData from '../../../data/antartica_seaIce.json'
+import articData from '../../../data/artic_seaIce.json'
+import greenlandData from '../../../data/greenland_seaIce.json'
+
+class MassTrend extends React.Component {
 
     constructor(props) {
         super(props)
@@ -38,4 +42,4 @@ class MassTrendChart extends React.Component {
     }
     }
 
-    export default MassTrendChart;
+    export default MassTrend;
