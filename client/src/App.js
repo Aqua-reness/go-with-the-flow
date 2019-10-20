@@ -4,8 +4,8 @@ import './App.css';
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 
-import Forecast from './Forecast'
-import Current from './Current'
+import Forecast from './components/pages/Forecast/Forecast'
+import Current from './components/pages/Current/Current'
 
 import {
   Route
