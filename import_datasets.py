@@ -16,6 +16,31 @@ cwd = os.getcwd()
 dataset_dir = 'risingWaterDatasets/'
 output_dir = 'client/src/data/'
 
+def formatForLSTM():
+    
+    dup_year_idx = 0        
+    duplicate_years = []        
+    sameyears_idxes = []
+    numdups = 1
+    
+    for n in range(len(years)):
+        curryear = str(years[n])[:4]
+        if not sameyears:
+            duplicate_years[sameyear_list_idx]=curryear
+            dup_year_idx = dup_year_idx + 1
+            
+        elif curryear == duplicate_years[dup_year_idx]:
+            sameyears_idxes[numdups[dup_year_idx]]=n
+            dup_year_idx = dup_year_idx + 1
+            
+        elif curryear != duplicate_years[dup_year_idx]:
+            dup_year_idx = 0
+            numdups = numdups + 1
+            sameyears_idxes[numdups[dup_year_idx]] = n
+            dup_year_idx = dup_year_idx + 1
+    
+    return
+
 
 def convertToJSON(gmsl,artic_seaIce,antartica_seaIce,greenland_seaIce,co2,tempAnomalies,total_pop_sum):
     
@@ -64,11 +89,15 @@ def getdata():
     total_pop = population.transpose()
     total_pop_indexes = total_pop.index;
     total_pop_sum = total_pop.sum(axis=1,skipna=True).rename('totalpopulation')
-    
+        
     convertToJSON(gmsl,artic_seaIce,antartica_seaIce,greenland_seaIce,co2,tempAnomalies,total_pop_sum)
 
     return;
     
     
 getdata()
+
+
+    
+
 
