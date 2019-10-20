@@ -2,7 +2,7 @@ import React from 'react';
 
 import MassTrendChart from '../../shared/MassTrend/MassTrendChart'
 import ChartInfo from '../../shared/ChartInfo/ChartInfo'
-import SeaLevel from '../../shared/SeaLevel'
+import SeaLevel from '../../shared/SeaLevel/SeaLevel'
 
 class Current extends React.Component {
   
