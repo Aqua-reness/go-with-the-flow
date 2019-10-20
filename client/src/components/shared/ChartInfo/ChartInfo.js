@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 class ChartInfo extends React.Component {
   
   constructor(props) {

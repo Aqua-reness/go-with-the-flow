@@ -1,6 +1,8 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
 
+import globalMeanSeaLevel from '../../../data/gmsl.json'
+
 class MassTrendChart extends React.Component {
 
     constructor(props) {
@@ -11,28 +13,33 @@ class MassTrendChart extends React.Component {
 
     componentDidMount() {
         // load up JSON files to be displayed in charts
-        
+
     }
 
     render() {
         const {
 
         } = this.state
+        console.log(globalMeanSeaLevel)
+
+        const xValues = Object.keys(globalMeanSeaLevel.GMSL_GIA)
+        const yValues = Object.values(globalMeanSeaLevel.GMSL_GIA)
+        console.log(xValues)
+        console.log(yValues)
 
         return (
         <div className="mass-trend-content">
             <Plot
                 data={[
                 {
-                    x: [1, 2, 3],
-                    y: [2, 6, 3],
+                    x: xValues,
+                    y: yValues,
                     type: 'scatter',
                     mode: 'lines+points',
                     marker: {color: 'red'},
-                },
-                {type: 'bar', x: [1, 2, 3], y: [2, 5, 3]},
+                }
                 ]}
-                layout={ {width: 320, height: 240, title: 'A Fancy Plot'} }
+                layout={ {width: 700, height: 550, title: 'Global Mean Sea Level'} }
             />
         </div>
         );
