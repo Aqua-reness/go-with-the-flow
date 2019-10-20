@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <div className="menu">
-        <Navbar bg="dark" variant="dark">
+        <Navbar bg="dark" variant="dark" fixed="top">
           <LinkContainer to="/current">
             <Navbar.Brand>
               {'Go With The Flow'}

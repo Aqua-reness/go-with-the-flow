@@ -1,5 +1,13 @@
 import React from 'react';
 
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+
+import Card from 'react-bootstrap/Card'
+
+import './Current.css'
+
 import MassTrend from '../../shared/MassTrend/MassTrend'
 import ChartInfo from '../../shared/ChartInfo/ChartInfo'
 import SeaLevel from '../../shared/SeaLevel/SeaLevel'
@@ -19,28 +27,91 @@ class Current extends React.Component {
     return (
       <div className="current-content">
 
-      <div className="population-container">
-        <ChartInfo chartType="POPULATION" />
-        <Population />
-      </div>
+      <Container fluid={ true }>
+        <div className="row-content">
+            <Row>
+                <Col>
+                    <ChartInfo chartType="POPULATION" />
+                </Col>
+                <Col>
+                  <Card>
+                    <div className="population-container">  
+                      <Population />
+                    </div>
+                  </Card>
+                </Col>
+            </Row>
+        </div>
 
-      <div className="climate-change-container">
-        <ChartInfo chartType="CO2" />
-        <CO2 />
+        <hr className="container-separator" />
 
-        <ChartInfo chartType="TEMPERATURE_ANOMALIES" />
-        <TemperatureAnomalies />
-      </div>
+        <div className="row-content">
+            <Row>
+              <Col>
+                <Card>
+                  <div>
+                  <CO2 />
+                  </div>
+                </Card>
+              </Col>
+
+              <Col>
+                <Card>
+                  <div>
+                  <TemperatureAnomalies />
+                  </div>
+                </Card>
+              </Col>
+            </Row>
+
+          
+            <Row>
+              <Col>
+                <ChartInfo chartType="CO2" />
+              </Col>
+              <Col>
+                <ChartInfo chartType="TEMPERATURE_ANOMALIES" />
+              </Col>
+            </Row>
+        </div>
+
+        <hr className="container-separator" />
         
-      <div className="mass-trend-container">
-        <ChartInfo chartType="MASS_TREND" />
-        <MassTrend />
-      </div>
+        <div className="row-content">
+            <Row>
+                <Col>
+                  <ChartInfo chartType="MASS_TREND" />
+                </Col>
+                
+                <Col>
+                  <Card>
+                    <div className="mass-trend-container">
+                      <MassTrend />
+                    </div>
+                  </Card>
+                </Col>
+            </Row>
+        </div>
 
-      <div className="sea-level-container">
-        <ChartInfo chartType="SEA_LEVEL" />
-        <SeaLevel />
-      </div>
+        <hr className="container-separator" />
+
+        <div className="row-content">
+            <Row>
+              <Col>
+                <ChartInfo chartType="SEA_LEVEL" />
+              </Col>
+
+              <Col>
+                <Card>
+                  <div className="sea-level-container">
+                    <SeaLevel />
+                  </div>
+                </Card>
+              </Col>
+            </Row>
+        </div>
+
+      </Container>
 
       </div>
     );

@@ -11,21 +11,12 @@ class SeaLevel extends React.Component {
         this.state = {}
     }
 
-    componentDidMount() {
-        // load up JSON files to be displayed in charts
-
-    }
-
     render() {
-        const {
-
-        } = this.state
-
         const xValues = Object.keys(globalMeanSeaLevel.GMSL_GIA)
         const yValues = Object.values(globalMeanSeaLevel.GMSL_GIA)
 
         return (
-        <div className="mass-trend-content">
+        <div className="sea-level-content">
             <Plot
                 data={[
                 {
@@ -36,7 +27,9 @@ class SeaLevel extends React.Component {
                     marker: {color: 'red'},
                 }
                 ]}
-                layout={ {width: 700, height: 550, title: 'Global Mean Sea Level'} }
+                layout={ { autosize: true, title: 'Global Mean Sea Level' } }
+                useResizeHandler={ true }
+                className="chart-plot"
             />
         </div>
         );

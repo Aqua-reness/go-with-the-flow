@@ -11,15 +11,7 @@ class CO2 extends React.Component {
         this.state = {}
     }
 
-    componentDidMount() {
-        // load up JSON files to be displayed in charts
-
-    }
-
     render() {
-        const {
-
-        } = this.state
         const xValues = []
         const yValues = []
         const keys = Object.keys(co2Data.average)
@@ -33,7 +25,7 @@ class CO2 extends React.Component {
         }
 
         return (
-        <div className="mass-trend-content">
+        <div className="co2-content">
             <Plot
                 data={[
                 {
@@ -44,7 +36,9 @@ class CO2 extends React.Component {
                     marker: {color: 'red'},
                 }
                 ]}
-                layout={ {width: 700, height: 550, title: 'CO2'} }
+                layout={ {autosize: true, title: 'CO2'} }
+                useResizeHandler={ true }
+                className="chart-plot"
             />
         </div>
         );
