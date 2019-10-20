@@ -2,6 +2,7 @@ import React from 'react';
 
 import MassTrendChart from '../../shared/MassTrend/MassTrendChart'
 import ChartInfo from '../../shared/ChartInfo/ChartInfo'
+import SeaLevel from '../../shared/SeaLevel'
 
 class Current extends React.Component {
   
@@ -21,7 +22,8 @@ class Current extends React.Component {
         </div>
 
         <div className="sea-level-container">
-        
+          <ChartInfo />
+          <SeaLevel />
         </div>
 
         <div className="climate-change-container">
