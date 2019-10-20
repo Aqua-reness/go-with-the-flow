@@ -20,6 +20,18 @@ class Current extends React.Component {
           <MassTrendChart />
         </div>
 
+        <div className="sea-level-container">
+        
+        </div>
+
+        <div className="climate-change-container">
+        
+        </div>
+
+        <div className="population-container">
+        
+        </div>
+
       </div>
     );
   }
